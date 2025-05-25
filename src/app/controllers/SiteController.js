@@ -2,21 +2,23 @@ const Course = require('../models/Course');
 
 class SiteController {
     // [GET] /
-
-    async index(req, res) {
+    //next là function sẽ đẩy error vào middleware
+    async home(req, res) {
         try {
-            const courses = await Course.find({});
-            res.json(courses);
+            const courses = await Course.find({}).lean();
+            res.render('home', { courses });
         } catch (err) {
-            res.status(400).json({ error: 'error!' });
+            res.status(400).send('ERROR!');
         }
-
-        // res.render('home')
     }
 
     // [GET] /search
-    search() {
-        res.render('search');
+    search(req, res) {
+        try {
+            res.render('search');
+        } catch (err) {
+            res.status(400).send('ERROR!');
+        }
     }
 }
 
