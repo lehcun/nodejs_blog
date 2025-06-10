@@ -1,29 +1,37 @@
 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-    <a class='navbar-brand' href='/'>F8-web</a>
-    <button
-        class='navbar-toggler'
-        type='button'
-        data-toggle='collapse'
-        data-target='#navbarSupportedContent'
-        aria-controls='navbarSupportedContent'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-    >
-        <span class='navbar-toggler-icon'></span>
-    </button>
+    <div class='container'>
+        <a class='navbar-brand' href='/'>F8-web</a>
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul class='navbar-nav ml-auto'>
+                <li class='nav-item'>
 
-    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul class='navbar-nav mr-auto'>
-            <li class='nav-item active'>
-                <a class='nav-link' href='#'>Home <span class='sr-only'>(current)</span></a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='/courses/create'>Đăng khóa học</a>
-            </li>
-        </ul>
-        <form class='form-inline my-2 my-lg-0'>
-            <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
-            <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
-        </form>
+                </li>
+            </ul>
+
+            <div class='dropdown'>
+                <button
+                    class='btn btn-secondary dropdown-toggle'
+                    type='button'
+                    data-toggle='dropdown'
+                    aria-expanded='false'
+                >
+                    <img
+                        class='user-avatar'
+                        src='https://www.gravatar.com/avatar/ee3e9c6a509003ca86dac67b058ab6c263d737784c0bfd843566120efbb3470a.jpg?s=80&amp;d=mp&amp;r=g'
+                        alt='Cuong Le'
+                    />
+                    Le Cuong
+
+                </button>
+                <div class='dropdown-menu'>
+                    <a class='dropdown-item' href='/courses/create'>Đăng khóa học</a>
+                    <div class='dropdown-divider'></div>
+                    <a class='dropdown-item' href='/me/stored/courses'>Khóa học của tôi</a>
+                    <a class='dropdown-item' href='/me/stored/courses'>Bài viết của tôi</a>
+                    <div class='dropdown-divider'></div>
+                    <a class='dropdown-item' href='/me/stored/courses'>Đăng xuất</a>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>

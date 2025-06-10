@@ -23,9 +23,24 @@ class CourseController {
         formData.image = `https://files.fullstack.edu.vn/f8-prod/courses/4/61a9e9e701506.png`;
         const course = new Course(req.body);
         course
-            .save()
+            .save() // Lưu vào DB
             .then(() => res.redirect('/'))
             .catch((err) => {});
+    }
+
+    //[GET] /courses/:id/create
+    edit(req, res, next) {
+        Course.findById(req.params.id)
+            .lean()
+            .then((course) => res.render('courses/edit', { course }))
+            .catch(next);
+    }
+
+    //[PUT] /courses/:id
+    update(req, res, next) {
+        Course.updateOne({ _id: req.params.id }, req.body) //Update trong DB
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next);
     }
 }
 
